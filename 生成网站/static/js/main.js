@@ -1,0 +1,3 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // 其他功能代码...
+}); 

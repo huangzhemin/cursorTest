@@ -1,0 +1,34 @@
+# 生成文件的历史记录
+
+每次生成文件的内容做总结，并将小结 append 进 README.md 文件
+总结的内容包括：
+    - 会话的主要目的
+    - 完成的主要任务
+    - 关键决策和使用方案
+    - 使用的技术栈
+    - 修改了哪些文件
+
+# 光标行为规则配置文件
+
+# 编辑器设置
+editor.cursorStyle = "line"          # 光标样式：line（竖线）
+editor.cursorWidth = 2               # 光标宽度（像素）
+editor.cursorBlinking = "smooth"     # 光标闪烁方式：smooth（平滑）
+
+# 光标移动规则
+cursor.wordSeparators = ",;.(){}[]"  # 定义单词分隔符
+cursor.wordWrap = true               # 启用自动换行
+cursor.multiCursorModifier = "alt"   # 多光标修改键
+
+# 选择行为
+selection.smartSelect = true         # 启用智能选择
+selection.dragAndDrop = true         # 允许拖放选择的文本
+
+# 滚动设置
+scroll.smoothScroll = true           # 平滑滚动
+scroll.scrollBeyondLastLine = false  # 禁止滚动超过最后一行
+
+# 特殊规则
+rules.bracketMatching = true         # 括号匹配高亮
+rules.autoIndent = true             # 自动缩进
+rules.tabSize = 4                    # Tab键空格数 
