@@ -1,0 +1,887 @@
+[
+  {
+    "title": ".cursor/rules, Better Codebase Understanding, New Tab ModelRolling",
+    "date": "Jan 23, 2025",
+    "content": "0.45\nJan 23, 2025\n.cursor/rules: Users can write several repository-level rules to disk in the .cursor/rules directory. The Agent will automatically choose which rule to follow.\nDeepseek models: Deepseek R1 and Deepseek v3 are supported in 0.45 and 0.44. You can enable them in Settings > Models. We self-host these models in the US.\nSummarize Previous Composers: When conversations grow too long, you can start a new conversation while referencing the previous one.\nAgent sees recent changes: The agent can use a tool to see your recent changes. It also sees changes made between user messages.\nBetter Codebase Understanding: We've trained a new model for Codebase Understanding. We'll be rolling it out to all users on 0.45 in the coming week.\nFusion Model: We've trained a new Tab Model that is substantially better at jumps and long context. We'll also be rolling this out to users shortly.\nOptional Long Context: When tagging long files, users have the option to request a larger context window with premium models. This will use more fast requests.\nUPDATE (0.45.1-0.45.8): Fixes issue with older agent conversations, indexing stability, downloading incorrect extension versions, missing package on windows, crash on opening long composer sessions, latency on pasting code. Also adds MCP support, team-configurable blocklists, fixes Composer stuck on generating issue for some windows builds, and exit code 5 crashes."
+  },
+  {
+    "title": "Agent Improvements, Yolo Mode, Cursor Tab Update",
+    "date": "Dec 17, 2024",
+    "content": "0.44\nDec 17, 2024\nAgent sees terminal exit codes, can run commands in the background, and commands are now editable\nAgent reads linter errors to automatically fix issues\nWith Yolo Mode, the agent can auto-run terminal commands\n@docs, @git, @web, and @folder are now available in the agent\nAgent auto-saves changes to disk\nAgent can decide to edit multiple locations in parallel\nAgent can reapply edits with a smarter apply model\nComposer changes and checkpoints are now persisted across reloads\nCursor Tab can make larger edits at a time\nBetter UX to review changes in Composer\n4o Support for Agent\nCheaper and faster Bug Finding Model\nFixed edge case where Cursor Tab crashed\nFixed stuck on generating bug in chat/composer\nComposer no longer looks at files that were deleted\nFixed code selection edge-case for chat/apply\nCursor starts up faster\nUPDATE (0.44.1-0.44.11): Fixes and improvements to dev containers, chat codeblocks on windows, and the agent. Decreases Cursor Tab Latency on Remote SSH. Fixes bug that prematurely triggered the free trial ended popup. Better observability for errors and crashes."
+  },
+  {
+    "title": "New Composer UI, Agent, Commit Messages",
+    "date": "Nov 24, 2024",
+    "content": "0.43\nNov 24, 2024\nComposer UI in the sidebar with inline diffs\nEarly version of an agent in composer that can pick its own context and use the terminal\nGeneration of git commit messages\nFile pill recommendations in chat/composer\n@Recommended in chat/composer to semantically search for context\nNicer image-dropping experience\nSeveral performance improvements\nBeta: Sneak peek at an upcoming bug finder feature"
+  },
+  {
+    "title": "Composer History, @Lint Errors, VS Code 1.93.1",
+    "date": "Oct 9, 2024",
+    "content": "0.42\nOct 9, 2024\nComposer history lets you access previous composer sessions after restart. You can also edit and resubmit from previous messages within a session.\nWe have made slight improvements to Debug with AI and added back @Lint Errors in Chat.\nVS Code 1.93.1: Cursor is now based on VS Code 1.93.1.\nPython auto import for Cursor Tab is much more stable in this release.\nSwitching models is a lot easier with model search (Cmd-option-/) in the chat, composer, and cmd-k input boxes.\nComposer now only applies files that are in context to prevent hallucinations.\nUsing cursor . with WSL should now be more stable.\nUPDATE (0.42.1 - 0.42.5): Fixes the following upstream security issue: CVE-2024-43601. Also fixes a few composer bugs and a bug with Cursor Tab. Allows composer to auto apply to files not in its context. Also includes additional mitigations to CVE-2024-48919. Reduces a few long-tail connection errors. Adds escape hatch when Claude predicts the wrong filepath in chat."
+  },
+  {
+    "title": "Cursor Tab Python Auto Import, Composer Improvements, Remote SSH to Mac Support",
+    "date": "Sep 17, 2024",
+    "content": "0.41\nSep 17, 2024\nThis update fixes the following security issue: CVE-2024-45599.\nCursor Tab now auto-imports symbols in Python files! We've also significantly improved the Cursor Tab stability.\nComposer Notepads (previously called Projects) can now include tagged files and be referenced in chat, as well as composer.\nComposer can now be added to the AI pane. This release also includes many stability fixes and image support!\nApply and Composer are slightly faster in this release.\nWe've added support for using Cursor on Macs over Remote SSH.\nUPDATE (0.41.1 - 0.41.3): Improves onboarding UX, fixes a bug with composer cancellation, fixes the Apply button not working on some codeblocks, and fixes a bug where Cursor Tab sees malformed edits."
+  },
+  {
+    "title": "New Chat UX, Default-On Composer, New Cursor Tab Model",
+    "date": "Aug 22, 2024",
+    "content": "0.40\nAug 22, 2024\nWe have a new chat UX! Excited for you to try it out and share your thoughts.\nComposer is now default-on and available to all Pro/Business users by hitting cmd+I. We've added Composer Projects (beta), which allows you to share instructions among several composers.\nWe've also trained a new Cursor Tab model that's smarter and more context-aware.\nAuto imports (beta) for Cursor Tab for TypeScript files - when Tab suggests an unimported symbol, we'll now auto-import it to your current file. You can enable it in Settings > Features > Cursor Tab!\nUPDATE (0.40.1 - 0.40.4): Fixes a bug with apply on remote ssh, a few chat bugs, speeds up Cursor Tab for Europe/Asia users, fixes some outstanding Cursor Tab bugs and notifications hiding the chat input, and includes a fix for Cursor asking for permissions for files in your ~/Library folder on MacOS (upstream issue: microsoft/vscode#208105)"
+  },
+  {
+    "title": "Faster Cursor Tab, More Composer improvements",
+    "date": "Aug 2, 2024",
+    "content": "0.39\nAug 2, 2024\nCursor Tab (previously called Copilot++) defaults to chunked streaming. This build also includes several Cursor Tab speedups. More to come in future builds!\nConcurrent composers support, composer control panel, and various bug fixes such as accepted files being deleted.\nUPDATE (0.39.1 - 0.39.6): Fixes several Cursor Tab rendering bugs, a bug where the file explorer was not responsive, and a bug where Cursor Tab would hang."
+  },
+  {
+    "title": "Copilot++ Chunked Streaming (beta), Composer improvements",
+    "date": "Jul 23, 2024",
+    "content": "0.38\nJul 23, 2024\nCopilot++ now has chunked streaming (currently in Beta)! It will surface edits faster in smaller chunks. To enable it, click the settings gear and enable \"Chunked Streaming\" under Features > Copilot++.\nWe've also added a file picker, arrow key navigation, and a model toggle to Composer. This release also patches a few outstanding Composer bugs.\nVS Code 1.91.1: Cursor is now based on VS Code 1.91.1.\nNew Default Model: We've made Claude 3.5 Sonnet the default model for users.\nUPDATE (0.38.1): Fixes a bug where OpenAI API Key users would be migrated to Claude 3.5 Sonnet"
+  },
+  {
+    "title": "Composer (beta)",
+    "date": "Jul 13, 2024",
+    "content": "0.37\nJul 13, 2024\nThis build comes with a new experimental multi-file editing feature. To enable it, click the settings gear, head to Beta, and activate \"Composer.\" To use it, hit Cmd+I. We'd love to hear your thoughts."
+  },
+  {
+    "title": "Instant Applies, Docs Management",
+    "date": "Jul 3, 2024",
+    "content": "0.36\nJul 3, 2024\nWhen the chat suggests a code block, click \"Apply\" to instantly see the change to the file (small enough files only).\nDocs management! Go to Cursor Settings > Features > Docs to re-index your docs.\nBug fixes when using your own API key for Claude.\nUPDATE (0.36.1-0.36.2): Fixes #1526, cmd-shift-F on macOS x64 devices. Also fixes official docs taking a long time to show up, and cmd-K stickiness being buggy."
+  },
+  {
+    "title": "Default-on Cursor Prediction, Remote Tunnels & More Robust SSH",
+    "date": "Jun 8, 2024",
+    "content": "0.35\nJun 8, 2024\nDefault-on Cursor Prediction with a new UI\nRemote tunnels are now supported! Remote SSH support is also more robust (now supports multiple proxy jumps, among other things).\nAdds context pills to chat messages, so you can see what will be/was used\nCmd K context-building improvements\nFixes partial completions with Copilot++ on Windows/Linux\nUPDATE (0.35.1): Disables Copilot++ partial accepts by default and makes the keybinding configurable (go to Cursor Settings > Features > Cpp to re-enable). Makes gpt-4o the default model."
+  },
+  {
+    "title": "VS Code 1.89, New Cursor Prediction UI, Gemini 1.5 Flash, Copilot++ partial completion",
+    "date": "May 26, 2024",
+    "content": "0.34\nMay 26, 2024\nMerges VS Code 1.89 into Cursor\nNew Cursor Prediction UI\nGemini 1.5 Flash is available in long-context mode\nAccept partial completions with Copilot++\nBetter performance of Copilot++ on linter errors\nToggleable rerankers on codebase search\nGPT-4o in Interpreter Mode\nUPDATE (0.34.1-0.34.6): Fixes long context models in the model toggle, an empty AI Review tab, Copilot++ preview bugs, the Mac icon size, and remote ssh fixes."
+  },
+  {
+    "title": "Networking Stability, Command-K Autoselect",
+    "date": "May 3, 2024",
+    "content": "0.33\nMay 3, 2024\nStability: This build fixes a connection error problem that was consistently affecting some users. It should also improve the performance of Cursor on spotty internet.\nCommand-K Autoselect: We've also added automatic selection for Command-K! This means you can now press Command-K, and it will automatically select the region you're working on, though you can still select manually if you prefer.\nUPDATE (0.33.1-0.33.3): Fix to settings toggles, fix to Copilot++ diffbox performance, onboarding tweaks."
+  },
+  {
+    "title": "Improved Copilot++ UX, New GPT-4 Model",
+    "date": "Apr 12, 2024",
+    "content": "0.32\nApr 12, 2024\nCopilot++ UX: Suggestion previews now have syntax highlighting, which we find makes it much easier to quickly understand the changes.\nCursor Help Pane (Beta): You can also ask Cursor about Cursor! The Cursor Help Pane has information about features, keyboard shortcuts, and much more. You can enable it in Settings > Beta.\nNew GPT-4 model: As of a couple of days ago, you can try out gpt-4-turbo-2024-04-09 in Cursor by toggling it on in Settings > Models.\n.cursorrules: You can write down repo-level rules for the AI by creating a .cursorrules file in the root of your repository. You might use this to give for context on what you're building, style guidelines, or info on commonly-used methods.\nUPDATE (0.32.1-0.32.7): Fixes a performance issue with the new Copilot++ syntax highlighting, changes AI Notes to be default disabled, changes the naming of the main Copilot++ model to legacy, fixes Copilot++ being slower over SSH, fixes to the Copilot++ preview box."
+  },
+  {
+    "title": "Long Context Chat Beta",
+    "date": "Apr 1, 2024",
+    "content": "0.31\nApr 1, 2024\nLong Context Chat (Beta): This is a new experimental feature that lets you talk with lots of files! To enable it, head to Settings > Beta. Then, select \"Long Context Chat\" in the top right of a new chat and try @'ing a folder or the entire codebase.\nFixes: This release patches a bug where empty / partial responses are shown in chat.\nUPDATE (0.31.1 - 0.31.3): Adds back in AI Review (alpha), fixes the \"Cursor Settings\" menu item, and fixes a bug where @web doesn't return a response."
+  },
+  {
+    "title": "Faster Copilot++, Claude",
+    "date": "Mar 20, 2024",
+    "content": "0.30\nMar 20, 2024\nFaster Copilot++: We've made Copilot++ ~2x faster! This speed bump comes from a new model / faster inference. ~50% of users are already on this model, and it will roll out to everyone over a few days. If you'd like to enable the model immediately, you can control your model in the bottom bar of the editor.\nStable Claude Support: All the newest Claude models are available for Pro and API key users. Head to Settings > Models to toggle them on. Pro users get 10 requests / day for free and can keep using Claude at API-key prices for subsequent requests.\nTeam invites: We made it a bit easier for you to invite your colleagues to your Cursor team. You can send these from the editor's settings or at cursor.com/settings.\nAdmin improvements: Team admins can now mark themselves as unpaid users and can see the last time team members used the product.\nNew Settings: We moved all our settings to be accessible by the gear in the top right. No more \"More\" tab!"
+  },
+  {
+    "title": "Claude Support",
+    "date": "Mar 12, 2024",
+    "content": "Mar 12, 2024\nIf you’re a Pro or Business user, you can add \"claude-3-opus\" as a custom model in the Settings page and use 10 fast requests per day for free (unlimited slow, but the delay increases exponentially).\nWe expect to roll out a more permanent solution (including API key users) very soon."
+  },
+  {
+    "title": "Polish",
+    "date": "Mar 1, 2024",
+    "content": "0.29\nMar 1, 2024\nAI Notes enabled by default (hold shift on any symbol), better in-editor chat, auto-execute interpreter mode, better onboarding styling, nicer feedback modal, and a few stability fixes.\nUPDATE (0.29.1): Fixes a bug where the Copilot++ sometimes would not show a suggestion even if one existed, a bug where the hint line would sometimes cover the ghost text, and a bug where AI Notes would not work on Windows."
+  },
+  {
+    "title": "VS Code 1.86.2",
+    "date": "Feb 23, 2024",
+    "content": "0.28\nFeb 23, 2024\nCursor is now based on VS Code 1.86.2! Among other things, this adds sticky scroll support to tree views. Also, cmdk prompt bars are now sticky.\nUPDATE (0.28.1): Fixes spacing issue with codebase chat, fixes getcursor/cursor#1236."
+  },
+  {
+    "title": "Linter, Interpreter Mode Updates",
+    "date": "Feb 15, 2024",
+    "content": "0.27\nFeb 15, 2024\nTwo new updates to experimental features:\nLinter: You can now turn on an AI linter in the \"More\" tab beside Chat. It'll scan your file for small bugs every time you save.\nInterpreter Mode: We've made some big improvements to the backend powering interpreter mode! It should now be much better at using tools and understanding your project.\nUPDATE (0.27.1-0.27.4): Fixes to Windows build, chat context UI, onboarding."
+  },
+  {
+    "title": "AI Previews Beta",
+    "date": "Feb 9, 2024",
+    "content": "0.26\nFeb 9, 2024\nAI Previews: this is an experimental new code reading feature. After enabling in the \"More\" tab beside Chat, just hold shift to see a generate some quick notes about the symbol you're on. If you'd like us to dedicate more time to this direction, please let us know.\nOther changes:\nFine-grained chat replies (start by hovering over the area of the response you want to reply to)\nCopilot++ quality of life improvements (show ghost text more often, toggle on/off on the status bar, make it easier to see the suggestion box)\nSmoother onboarding (fix Windows settings import, option to import folder/window state)"
+  },
+  {
+    "title": "Cmd-I to Heal",
+    "date": "Feb 2, 2024",
+    "content": "0.25.0-nightly\nFeb 2, 2024\nHold down cmd-I over a selection to heal the code with GPT-4. Useful for writing pseudocode and having the AI convert it into correct code. Please let us know if you find it useful!"
+  },
+  {
+    "title": "Command-K Vision Support",
+    "date": "Feb 2, 2024",
+    "content": "0.25\nFeb 2, 2024\nYou can now drag images into the Command-K prompt bar!\nOther changes:\nYou can now search through past chats.\n\"Apply Diffs\" from chat should be a bit faster.\nUPDATES:\n0.25.2: Copilot++ performance improvements\n0.25.3: Fix for a cmd-K bug: getcursor/cursor#1226."
+  },
+  {
+    "title": "@Web, gpt-4-0125-preview",
+    "date": "Jan 25, 2024",
+    "content": "0.24\nJan 25, 2024\nUsing @Web in chat will give the AI the ability to crawl the web! The tools it can use include a search engine and a documentation site crawler.\nThis feature is still experimental. We're very interested in improving the ability of the AI to understand external libraries, and your thoughts will help us improve :).\nBoth pro and API key users can also try out gpt-4-0125-preview by configuring the model under Settings > OpenAI API > Configure Models. We’re testing the new model right now for pro users to see if it performs better than all older versions of gpt-4. If so, will roll out as the default experience.\nUPDATE (0.24.3-0.24.4): Adds ability to configure OpenAI base URL, fixes getcursor/cursor#1202."
+  },
+  {
+    "title": "New Model, Apply Button v2",
+    "date": "Jan 18, 2024",
+    "content": "0.23\nJan 18, 2024\n\"cursor-fast\": This is a new model available in command-k and chat. Expect it to be a bit smarter than gpt-3.5, and with many fewer formatting errors.\nApply button: We've added some polish to the \"apply codeblock\" experience in chat.\nChat lints: If the AI suggests a code change in chat that involves a made up code symbol, we'll underline it. Availble for Python, Typescript, Rust.\nMore chat symbol links: When the chat references a code symbol, you'll often be able to click directly to it.\nUPDATE (0.23.3-0.23.9): Fixes to Command-K, changelog auto-opening, editing very long lines with Copilot++, the \"delete index\" button, connection errors being silenced, and proxied authentication."
+  },
+  {
+    "title": "Cursor-Fast Model",
+    "date": "Jan 15, 2024",
+    "content": "0.22.1-nightly\nJan 15, 2024\nCursor-Fast is a newly trained model between gpt-3.5 and gpt-4 coding capabilities, with very fast response times (~3.5 speed). We'll be working to improve its performance over the coming weeks. Counts the same as 3.5 usage.\nTry using it for Cmd+k!\nBug fixes:\nWorking WSL codebase search\nSupports newer version of python extension"
+  },
+  {
+    "title": "Dev Containers",
+    "date": "Jan 6, 2024",
+    "content": "0.22.0\nJan 6, 2024\nDev containers are now supported! This build also:\nUpgrades Cursor to VS Code 1.85, which comes with support for dragging out tabs into a new window.\nImproves the stability of WSL."
+  },
+  {
+    "title": "Better Remote Support",
+    "date": "Jan 6, 2024",
+    "content": "0.21.6-nightly\nJan 6, 2024\nWSL and Dev Containers should now work properly."
+  },
+  {
+    "title": "Early Preview: Hold-cmd-tap-shift to Trigger AI Rewrite",
+    "date": "Jan 3, 2024",
+    "content": "0.21.5-nightly\nJan 3, 2024\nHold down command, press and release shift, and continue holding down command. This will trigger tha AI to rewrite code around your Cursor — you can think of it as a manually triggered GPT-4-powered Copilot++. You can use it to write pseudocode and have the AI correct it, or for tedious refactors where Copilot++ doesn't quite suffice."
+  },
+  {
+    "title": "Aux Window Fixes",
+    "date": "Dec 31, 2023",
+    "content": "0.21.4-nightly\nDec 31, 2023\nYou can now use chat and cmd-k in the aux window without too many problems."
+  },
+  {
+    "title": "VS Code 1.85.1",
+    "date": "Dec 30, 2023",
+    "content": "0.21.3-nightly\nDec 30, 2023\nCursor is now based on VS Code 1.85.1, which, among other things, includes floating editor windows. Just drag and drop an editor onto your desktop to try it out."
+  },
+  {
+    "title": "Multiple Command-K, Copilot++ UI",
+    "date": "Dec 29, 2023",
+    "content": "0.21.0\nDec 29, 2023\nYou can now run multiple Command-K's in parallel! Also, it should now be easier to see change Copilot++ is suggesting."
+  },
+  {
+    "title": "Copilot++, @ previews, AI Review",
+    "date": "Dec 16, 2023",
+    "content": "0.20.0\nDec 16, 2023\n@ previews: We made it easier to see what codeblock you're @'ing.\nCopilot++: We've contined to improve the Copilot++ ghost text experience. Surprisingly, many of us now enjoy using Copilot++ without any other autocomplete plugin installed.\nAI Review (beta): This is a new experimental feature that let's GPT-4 scan your git diff or PR for bugs. You can enable it in the \"More\" tab beside chat. Feedback is much appreciated.\nUPDATE (0.20.1-0.20.2): We added TLDRs to make it easier to sort through the bugs flagged by the AI review and fixed a bug with \"Diff with Main.\""
+  },
+  {
+    "title": "Interpreter Mode Windows Bug",
+    "date": "Dec 14, 2023",
+    "content": "0.19.1\nDec 14, 2023\nFixes a CRLF bug in interpreter mode: getcursor/cursor#1131."
+  },
+  {
+    "title": "Copilot++ Improvements",
+    "date": "Dec 14, 2023",
+    "content": "0.19.0\nDec 14, 2023\nWe made Copilot++ faster, smarter, more constrained, and switched to a ghost-text + hit-Tab-to-accept UI. Would love your feedback."
+  },
+  {
+    "title": "Make SSH Work on Xon.sh",
+    "date": "Dec 13, 2023",
+    "content": "0.18.11-nightly\nDec 13, 2023\nMake ssh work on xon.sh"
+  },
+  {
+    "title": "Minor Bug Fixes",
+    "date": "Dec 12, 2023",
+    "content": "0.18.10-nightly\nDec 12, 2023\nMino bug fixes."
+  },
+  {
+    "title": "Fix Onboarding for Option Edits",
+    "date": "Dec 10, 2023",
+    "content": "0.18.9-nightly\nDec 10, 2023\nMinor onboarding fixes."
+  },
+  {
+    "title": "0.18.5 - Onboarding & Feedback",
+    "date": "Dec 6, 2023",
+    "content": "0.18.4\nDec 6, 2023\nMinor onboarding changes. Allows users to provide feedback on the chat response."
+  },
+  {
+    "title": "Smarter Followups",
+    "date": "Dec 2, 2023",
+    "content": "0.18.3-nightly\nDec 2, 2023\nRunning Cmd+enter on followups should result in much better codebase results."
+  },
+  {
+    "title": "Lowercase @ Folders Fix",
+    "date": "Dec 2, 2023",
+    "content": "0.18.2\nDec 2, 2023\nFixes the bug where all folders are switched to lowercase when using @ folder in chat."
+  },
+  {
+    "title": "Better Context Chat, Faster Copilot++",
+    "date": "Nov 30, 2023",
+    "content": "0.18.0\nNov 30, 2023\nBetter context chat: in particular, followups are now smarter!\nFaster Copilot++: a few hundred milliseconds faster, through various networking optimizations. We still have several hundred additional milliseconds to cut here.\nMore reliable Copilot++ changes: less flashing, better highlighting of what's new."
+  },
+  {
+    "title": "Image Support, Interpreter Mode Beta, @ Folders",
+    "date": "Nov 27, 2023",
+    "content": "0.17.0\nNov 27, 2023\nImage Support in Chat: You can now drag and drop images into the chat to send them to the AI.\nInterpeter Mode Beta: You can now enable Interpreter Mode in the \"More\" tab. This gives the chat access to a Python notebook, semantic search, and more tools.\n@ folders: You can now use the @ symbol to reference specific folders! We'll try to pick out the most relevant code snippets to show the AI.\nCopilot++ Improvements: We've spent some time improving the latency of Copilot++, and you can change the Copilot++ keybinding to not be Option/Alt. More to come here soon, especially on the model itself!"
+  },
+  {
+    "title": "0.16.9-nightly - Interpreter Mode Windows Bug Fixes",
+    "date": "Nov 26, 2023",
+    "content": "0.16.6-nightly\nNov 26, 2023\nFixes a bug where the interpreter mode just wouldn't run at all on Windows."
+  },
+  {
+    "title": "GPT-V Windows Bug-fixes",
+    "date": "Nov 24, 2023",
+    "content": "0.16.5-nightly\nNov 24, 2023\nFixes the bug where images weren't showing up or being sent to server on Windows."
+  },
+  {
+    "title": "@folder",
+    "date": "Nov 24, 2023",
+    "content": "0.16.4-nightly\nNov 24, 2023\nYou can now @folder in the chat to chat with a folder. Let us know what you think!"
+  },
+  {
+    "title": "Interpreter Mode Beta",
+    "date": "Nov 22, 2023",
+    "content": "0.16.3-nightly\nNov 22, 2023\nExperimental feature: go to \"More\" > \"Interpreter Mode\" to enable it. Gives the model access to a Python notebook where it can take actions in the editor. Please give us feedback in the Discord! We'd love to know if you find it useful."
+  },
+  {
+    "title": "GPT-V Support",
+    "date": "Nov 21, 2023",
+    "content": "0.16.2-nightly\nNov 21, 2023\nIntegrates GPT-V into chat for the editor. This means you can take screenshots/images and drag it into the chat inputbox to have Cursor use them as context. This is an experimental feature and very limited by capacity, so you may see errors during traffic spikes."
+  },
+  {
+    "title": "Copilot++ improvements and VS Code 1.84.2",
+    "date": "Nov 15, 2023",
+    "content": "0.16.0\nNov 15, 2023\nCopilot++ improvements:\nCaching — add and delete a letter and the suggestion will still be there for you!\nDo not interfere with intellisense and cmd-k.\nFixes bugs with lag on large files and with the blue highlight staying around.\nCopilot++ sees your lint errors and will use this to improve its suggestions\nCursor is now based on VS Code 1.84.2. Notably, this fixes a few notebook bugs, and ensures that all of the most recent extensions work."
+  },
+  {
+    "title": "New upstream",
+    "date": "Nov 15, 2023",
+    "content": "0.15.6-nightly\nNov 15, 2023\nNow based on VS Code 1.84.2. Notably, this fixes a few notebook bugs, and ensures that all of the most recent extensions work."
+  },
+  {
+    "title": "0.15.5 - Copilot++ improvements, Bug fixes",
+    "date": "Nov 12, 2023",
+    "content": "0.15.2\nNov 12, 2023\nCopilot++ improvements: Includes green highlights to see what Copilot++ has added, the ability to accept multiple Copilot++ suggestions immediately one after another, support for Copilot++ on SSH, and fixes to how Copilot++ UI interacts with autocomplete plugins.\nBug fixes: Fixed a bug where Cmd-k could get into a bad state when removing at the top of a file. And another that was causing some files to not be indexed."
+  },
+  {
+    "title": "0.15.1 - New models, Copilot++ beta",
+    "date": "Nov 10, 2023",
+    "content": "0.15.0\nNov 10, 2023\nCommand-dot: you can now use the Command-dot menu to have Command-K fix lint errors inline.\nNew models: you can plug in your API key to try out the newest gpt-4 and gpt-3 turbo models. We're evaluating the coding skills of these models before rolling out to pro users.\nApply chat suggestions: click on the play button on any code block to have the AI apply in-chat suggestions to your current file.\nCopilot++ (beta): this is an \"add-on\" to Copilot that suggests diffs around your cursor, using your recent edits as context. To enable it, go to the \"More\" tab in the right chat bar. Note: to cover the costs of the AI, this is only available for pro users. This is very experimental, so don't expect too much yet! Your feedback will decide which direction we take this.\nThis is very experimental, so don't expect too much yet! Your feedback will decide which direction we take this."
+  },
+  {
+    "title": "Indexing fixes",
+    "date": "Nov 9, 2023",
+    "content": "0.14.1\nNov 9, 2023\nFixes a problem where indexing got stuck. Indexing capacity is now also allocated by-user, so it should be more fair and faster for most users."
+  },
+  {
+    "title": "Pro++, Word-wrapping diffs, and more",
+    "date": "Nov 3, 2023",
+    "content": "0.14.0\nNov 3, 2023\nPro++ plan: if you hit your fast request limit and prefer to purchase more, you now can.\nChat scroll: we got rid of sticky scroll to make the chat easier to read.\nCmd-K diffs: these now obey word-wrap! You can also copy from the red text.\nFixed the bug where you can't use chat on a diff view.\nShipped better error logging, which should help us improve stability.\nStyling tweaks: some buttons and hints should look nicer!\nScreen flickering: made a change that should reduce screen flickering on monitors."
+  },
+  {
+    "title": "0.13.4 - New VS Code version",
+    "date": "Oct 20, 2023",
+    "content": "0.13.0\nOct 20, 2023\nCursor is now based on VS Code 1.83.1. This ensures that the newest versions of all extensions will work without problem in Cursor. Thank you to everyone who urged us to do this on the forum!\nAlso, there's an experimental bash mode: enable it in the settings, and let the chat answer questions with the help of running bash commands. If you find it useful, please let us know, and we will spend more time on making it production-ready!\nUpdate: this change resulted in a problem with SSHing into old Linux distros. This has now been fixed!"
+  },
+  {
+    "title": "0.12.3 - Small fixes",
+    "date": "Oct 5, 2023",
+    "content": "0.12.1\nOct 5, 2023\nBug fixes: (1) .cursorignore now completely respects .gitignore syntax, (2) codebase queries use the embeddings index if >= 80% of it is indexed, instead of requiring the entire thing to be indexed, (3) removed fade-in animation on startup, (4) no longer overrides cmd-delete in the terminal, (5) fixes problem where cmd-F randomly has the case-sensitive option enabled, (6) inline gpt-4 is turned off until we figure out a better UX, (7) even more stable and fast indexing, (8) progress indicator in search and extensions, (9) bug where an incorrect bearer token is passed to the server."
+  },
+  {
+    "title": "Jupyter Import Fix",
+    "date": "Oct 3, 2023",
+    "content": "0.12.9-nightly\nOct 3, 2023\nFixes a bug that prevents importing the jupyter extension from VS Code."
+  },
+  {
+    "title": "Indexing, cmd-k in terminal, @git, /edit, bugfixes",
+    "date": "Oct 1, 2023",
+    "content": "0.12.0\nOct 1, 2023\nIndexing should now be faster, more stable, and use less of your system resources. You can also configure ignored files in a .cursorignore. The controls are in the \"More\" tab.\nCmd-k is now in the terminal! A bit hackily implemented, but surprisingly useful.\nAsk about git commits and PRs using @git in chat!\nUse /edit in the chat to edit a whole file (if less than 400 lines). Expect the edits to be fast and GPT-4-quality. This uses non-public models, and is for now only available to users who do not use their own API key.\nBugfixes! Fixed the \"ejected from slow mode\" UI, added auto-switching logic for the model type when switching on API, improved @ symbol speed, fixed Windows keycommand to be Ctrl-Shift-Y instead of Ctrl-Y, and more."
+  },
+  {
+    "title": "/edit in chat",
+    "date": "Sep 27, 2023",
+    "content": "0.11.15-nightly\nSep 27, 2023\nYou can now use an early preview of /edit in the chat! It's significantly faster at editing entire files than just using cmd-k. The /edit feature is currently only supported if you do not use your own API key, since it relies on non-public models."
+  },
+  {
+    "title": "gitignore and search hotfix",
+    "date": "Sep 23, 2023",
+    "content": "0.11.13-nightly\nSep 23, 2023\nFixes an annoying gitignore path bug\nnever lets your root directory be in the gitignore\nfixes search over the repository."
+  },
+  {
+    "title": "Stable Indexing v0.1",
+    "date": "Sep 22, 2023",
+    "content": "0.11.5-nightly\nSep 22, 2023\nStable version of indexing. this should be much more stable than previous versions."
+  },
+  {
+    "title": "Cmd-K in the terminal!",
+    "date": "Sep 21, 2023",
+    "content": "0.11.3-nightly\nSep 21, 2023\nHacky first version of cmd-K in the terminal! Let us know what you think."
+  },
+  {
+    "title": "0.11.8 - Patches",
+    "date": "Sep 20, 2023",
+    "content": "0.11.1\nSep 20, 2023\nFixes issues with Cmd-k, SSH, Python support, Vim (rolling back to 1.25.2 until this issue is fixed: VSCodeVim/Vim#8603), and other extensions."
+  },
+  {
+    "title": "More Stable Codebase Indexing",
+    "date": "Sep 20, 2023",
+    "content": "0.11.2-nightly\nSep 20, 2023\nWe ship a new version of indexing which should be significantly more stable than previous versions"
+  },
+  {
+    "title": "Inline Chat",
+    "date": "Sep 19, 2023",
+    "content": "0.11.0\nSep 19, 2023\nYou can now alternate between diffs and texts responses in Cmd-K. This can be helpful for clarifying the models thinking behind a diff or for getting quick inline answers to questions about a file."
+  },
+  {
+    "title": "Cursor Python and Cursor Marketplace",
+    "date": "Sep 17, 2023",
+    "content": "0.11.1-nightly\nSep 17, 2023\nWe point to a different marketplace for downloading extensions, and use a fork of ms-python and pyright to provide python support."
+  },
+  {
+    "title": "Re-enable Cursor Python",
+    "date": "Sep 11, 2023",
+    "content": "0.10.7-nightly\nSep 11, 2023\nWe re-enable cursor python in nightly, this time with defaults that more closely resemble pylance."
+  },
+  {
+    "title": "Cursor Marketplace",
+    "date": "Sep 11, 2023",
+    "content": "0.10.6-nightly\nSep 11, 2023\nWe serve extensions now using Cursor's Extension Marketplace"
+  },
+  {
+    "title": "Fix bug in @ symbol ranking",
+    "date": "Sep 10, 2023",
+    "content": "0.10.5-nightly\nSep 10, 2023\nFixes a bug where the @ symbol would rank suboptimally."
+  },
+  {
+    "title": "Quick question and @chat in cmd+k",
+    "date": "Sep 10, 2023",
+    "content": "0.10.4-nightly\nSep 10, 2023\nAsk a question about an edit that the model with option+enter, or bring in context from the chat with @chat! An early preview, so please let us know what you think."
+  },
+  {
+    "title": "Fixed builtin cursor-python defaults",
+    "date": "Sep 10, 2023",
+    "content": "0.10.4\nSep 10, 2023\nThe defaults for cursor python are different than pylance, which has affected several users. We make them closer to the pylance defaults in this update."
+  },
+  {
+    "title": "0.10.3 - Reduce extension recommendations",
+    "date": "Sep 9, 2023",
+    "content": "0.10.2\nSep 9, 2023\nFixes an issue where some users were getting extension popup recommendations too often."
+  },
+  {
+    "title": "Styling tweaks",
+    "date": "Sep 8, 2023",
+    "content": "0.10.1-nightly\nSep 8, 2023\nUpdated some css!"
+  },
+  {
+    "title": "Styling",
+    "date": "Sep 8, 2023",
+    "content": "0.10.1\nSep 8, 2023\nUpdated some css!"
+  },
+  {
+    "title": "Better Docs Management, Staged Rollouts",
+    "date": "Sep 8, 2023",
+    "content": "0.10.0\nSep 8, 2023\nThe main addition in this update is better docs support. This means you can add and remove docs and inspect the urls that are actually being used for each doc you have uploaded. You'll also be able to see what webpages end up being shown to GPT-4 to provide you an answer.\nYou can also paste a url into the chat and the model will automatically include it in the context being used. Teams can also share private docs.\nFollowing this update, future updates should come as staged rollouts. This will mean greater guarantees of stability and more frequent updates.\nWe continued to improve the experience of chatting with large files. If you @ multiple files that are too large to fit in GPT-4's context window, we'll intelligently pick the most relevant chunks of code to show to show the model.\nCopy Paste chat text form Jupyter\nSome chat focus issues\nUI tweaks\nBetter state management - prevents crashes from editor using too much memory"
+  },
+  {
+    "title": "Hotfix for indexing",
+    "date": "Sep 7, 2023",
+    "content": "0.9.5\nSep 7, 2023\nFixes a bug with indexing if you had turned off indexing by default."
+  },
+  {
+    "title": "@definitions in cmd+k",
+    "date": "Sep 8, 2023",
+    "content": "0.9.9-nightly\nSep 8, 2023\nAlso fixes a few cmd+k bugs, as well as introduces new cmd+k bugs! Please report all cmd+k bugs you find to us in the Discord channel."
+  },
+  {
+    "title": "New AI Project",
+    "date": "Sep 7, 2023",
+    "content": "0.9.8-nightly\nSep 7, 2023\nWe release an improved New AI Project feature to nightly users. This is a more robust chain and cleaner UX for producing a project end-to-end.\nIt still struggles with coherently producing large complex projects, but produces much better first drafts than previously"
+  },
+  {
+    "title": "Better State Management",
+    "date": "Sep 7, 2023",
+    "content": "0.9.7-nightly\nSep 7, 2023\nWe no longer store any full files in memory and prevent users from @'ing very large files (> 2MB) This should reduce any significant memory issues that users have been experiencing."
+  },
+  {
+    "title": "Hotfix Cmd-K unexpectedly outputting backticks",
+    "date": "Sep 5, 2023",
+    "content": "0.9.4\nSep 5, 2023\nCmd-K will no longer output backticks if you do @file."
+  },
+  {
+    "title": "Docs updates",
+    "date": "Sep 5, 2023",
+    "content": "0.9.6-nightly\nSep 5, 2023\nUpdates to docs (try pasting a link in chat, you can delete/edit docs, you can see citations), @ symbol performance on long files in chat should improve, and more."
+  },
+  {
+    "title": "Cursor-Python LSP",
+    "date": "Sep 5, 2023",
+    "content": "0.9.5-nightly\nSep 5, 2023\nShips with cursor-python, a Language-Server fork of pyright built for Cursor"
+  },
+  {
+    "title": "Staged Rollouts",
+    "date": "Sep 2, 2023",
+    "content": "0.9.4-nightly\nSep 2, 2023\nWe can push an update to a randomly sampled small fraction of our users before rolling out to everyone."
+  },
+  {
+    "title": "Hotfix Github Auth",
+    "date": "Sep 1, 2023",
+    "content": "0.9.3\nSep 1, 2023\nYou should now be able to sign in with GitHub again."
+  },
+  {
+    "title": "Hotfix for large persisted state",
+    "date": "Sep 1, 2023",
+    "content": "0.9.2-nightly\nSep 1, 2023\nCould cause getcursor/cursor#843."
+  },
+  {
+    "title": "Hotfix large persisted state",
+    "date": "Aug 31, 2023",
+    "content": "0.9.2\nAug 31, 2023\nCould cause getcursor/cursor#843."
+  },
+  {
+    "title": "Hotfix SSH",
+    "date": "Aug 30, 2023",
+    "content": "0.9.1\nAug 30, 2023\nHotfixes a problem with SSH."
+  },
+  {
+    "title": "Auditable codebase context, VS Code left bar",
+    "date": "Aug 30, 2023",
+    "content": "0.9.0\nAug 30, 2023\nYou can now switch to the VS Code sidebar orientation\nFor \"with codebase\" chats, you can now see the codebase context that Cursor shows GPT-4. We hope this will make it easier to prompt codebase answers.\nAPI Key input box is now a password type\nFixed a bug where code was being indexed right after turning off the indexing option\nA new icon! Thank you so much to the amazing Atanas Mahony who made it."
+  },
+  {
+    "title": "Small refactor",
+    "date": "Aug 29, 2023",
+    "content": "0.8.4-nightly\nAug 29, 2023\nSmall refactor that we want to make sure doesn't break! Please report bugs if you find them."
+  },
+  {
+    "title": "Email in settings",
+    "date": "Aug 27, 2023",
+    "content": "0.8.6\nAug 27, 2023\nThe email under the logout button in Cursor settings was not updating."
+  },
+  {
+    "title": "Advanced Button",
+    "date": "Aug 26, 2023",
+    "content": "0.8.5\nAug 26, 2023\nHave the advanced context button show up for non git repos."
+  },
+  {
+    "title": "Bug fix for people on language packs",
+    "date": "Aug 26, 2023",
+    "content": "0.8.3-nightly\nAug 26, 2023\nWe had a big bug for people on language packs. Thank you to all who helped us debug! This should now be fixed, and should not happen again."
+  },
+  {
+    "title": "WSL Fixes",
+    "date": "Aug 22, 2023",
+    "content": "0.8.4\nAug 22, 2023\nApplies the patch from Github across all your WSL (Windows Subsystem for Linux) distros, either automatically or through the \"Fix WSL\" command palette command."
+  },
+  {
+    "title": "Codebase indexing controls",
+    "date": "Aug 22, 2023",
+    "content": "0.8.3\nAug 22, 2023\nFixes a bug were codebase indexing controls where inadvertently removed."
+  },
+  {
+    "title": "Cmd-k Followups, chat with large files, and more",
+    "date": "Aug 22, 2023",
+    "content": "0.8.2\nAug 22, 2023\nYou can now reply to Cmd-K outputs, making it much easier to have the model revise its work.\nIf you @ reference a long file that will be cutoff by the context limit, you'll be given the option to automatically chunk the file and scan it with many GPTs.\nCodeblocks and code symbols in \"with codebase\" responses will now often be clickable.\nFollow-up chat messages to \"with codebase\" will keep the codebase context.\nNicer error messages in the chat! Fewer annoying popups.\nActivity bar elements can now be reordered with drag-and-drop.\nSSH support is now more robust! Please continue to let us know if you are experiencing any SSH problems."
+  },
+  {
+    "title": "Activity bar can now be vertical",
+    "date": "Aug 21, 2023",
+    "content": "0.8.1-nightly\nAug 21, 2023\nSet workbench.activityBar.orientation to vertical, and restart Cursor, to see the vertical activity bar that you're used to from VS Code."
+  },
+  {
+    "title": "Small fixes",
+    "date": "Aug 21, 2023",
+    "content": "0.7.18-nightly\nAug 21, 2023\nNicer error messages in the chat! Fewer annoying popups.\nActivity bar elements can now be reordered with drag-and-drop."
+  },
+  {
+    "title": "More robust SSH support",
+    "date": "Aug 20, 2023",
+    "content": "0.7.16-nightly\nAug 20, 2023\nSSH support is now more robust! Please continue to let us know if you are experiencing any SSH problems."
+  },
+  {
+    "title": "Small improvements",
+    "date": "Aug 17, 2023",
+    "content": "0.7.14-nightly\nAug 17, 2023\nSmall things!\nThe cursor-nightly command now works on Mac.\nKeychords now use Cmd+R/Ctrl+R."
+  },
+  {
+    "title": "Patch cursor command on Windows",
+    "date": "Aug 15, 2023",
+    "content": "0.7.3\nAug 15, 2023\nFixes a bug with installing the cursor command on Windows."
+  },
+  {
+    "title": "0.7.10-nightly - Long-file experience",
+    "date": "Aug 13, 2023",
+    "content": "0.7.9-nightly\nAug 13, 2023\nBetter experience for long files!"
+  },
+  {
+    "title": "Followups in edits",
+    "date": "Aug 12, 2023",
+    "content": "0.7.8-nightly\nAug 12, 2023\nThe cmd-k edits now support followups! This is an early preview — please let us know of any annoyances or bugs, or if you preferred the no-followup mode. Please please send all feedback you have in the Discord channel!"
+  },
+  {
+    "title": "& 0.7.6-nightly - Fix cmd-k generate with large file",
+    "date": "Aug 11, 2023",
+    "content": "0.7.2\nAug 11, 2023\nNo more cognitive computing!"
+  },
+  {
+    "title": "& 0.7.5-nightly - Fix: Cursor in the wrong place",
+    "date": "Aug 10, 2023",
+    "content": "0.7.1\nAug 10, 2023\nFix getcursor/cursor#711.\nFix cmd-k connection error.\nFix cmd-k fast mode bug with empty lines.\nFix bm25 search infinite loading.\nFix @Codebase in followups."
+  },
+  {
+    "title": "In-editor chat",
+    "date": "Aug 10, 2023",
+    "content": "0.7.0\nAug 10, 2023\nFor those who don't want the chat side-by-side, you can now pop it into your editor! We've also fixed a number of bugs."
+  },
+  {
+    "title": "Cmd-K fast mode",
+    "date": "Aug 10, 2023",
+    "content": "0.7.1-nightly\nAug 10, 2023\nCmd-K now has a fast mode! It is about 1 second faster, and we're working on making it even faster. Let us know what you think!"
+  },
+  {
+    "title": "0.6.6-nightly - New cmd-K keybindings",
+    "date": "Aug 7, 2023",
+    "content": "0.6.5-nightly\nAug 7, 2023\nAnd a few other quality-of-life updates."
+  },
+  {
+    "title": "0.6.4-nightly - In-editor chat is back!",
+    "date": "Aug 3, 2023",
+    "content": "0.6.3-nightly\nAug 3, 2023\nAlso, the linter is slightly improved."
+  },
+  {
+    "title": "0.6.2-nightly - Improved linter",
+    "date": "Aug 1, 2023",
+    "content": "0.6.1-nightly\nAug 1, 2023\nImproved linter! Please give us feedback on the linter suggestions using the smiley faces. If you would like, you can make it more aggressive by going to the More tab and then clicking on \"Advanced linter settings\" at the bottom. Let us know what you think in the Discord."
+  },
+  {
+    "title": "A copilot experience powered by gpt-4",
+    "date": "Jul 28, 2023",
+    "content": "0.6.0\nJul 28, 2023\nIf you press ⌘/^+↩️ on any line, you will now get gpt-4 powering fast-completions for you! We know that sometimes all of us want copilot to write an entire function or a big chunk of code. But copilot can be slow and sometimes just not smart enough :(. So we're trying to solve this with a new completion experience powered by gpt-4. Just press ⌘/^+↩️ and you'll get a long completion from gpt-4.\nRemote-ssh is now built-in to cursor. You do not need to edit the behavior, it should just work :) We know this has been a big blocker for many users that rely on remote machines for development. If you are still running into issues, please let us know and we will fix it ASAP.\nThe AI linter is now enabled for everyone in pro! The AI will highlight suspicious parts of your code in blue. You can also add your own lint rules that you want that are easy to express in natural language but aren't covered by traditional linters."
+  },
+  {
+    "title": "Performance hotfix",
+    "date": "Jul 28, 2023",
+    "content": "0.5.1\nJul 28, 2023\nFixes a performance bug that would happen if you use cmd-k a lot."
+  },
+  {
+    "title": "Performance hotfix",
+    "date": "Jul 28, 2023",
+    "content": "0.5.2-nightly\nJul 28, 2023\nFixes a performance bug that would happen if you use cmd-k a lot."
+  },
+  {
+    "title": "More robust extension handling",
+    "date": "Jul 28, 2023",
+    "content": "0.5.1-nightly\nJul 28, 2023\nMore robust extension handling. You can now use pre-release extensions again."
+  },
+  {
+    "title": "Enterprise subscription support & misc fixes",
+    "date": "Jul 27, 2023",
+    "content": "0.5.0\nJul 27, 2023\nEnterprise support!\nC# and F# now properly render in the chat\nQmd support has been restored\nExperimental @Codebase support in the chat (and coming to the cmd-k soon!)\nLinter is back!\nSome fixes to codebase indexing."
+  },
+  {
+    "title": "& 0.4.2 - Hotfixes",
+    "date": "Jul 26, 2023",
+    "content": "0.4.1\nJul 26, 2023\nRemoves a check in the chat that slows the chat down in certain cases."
+  },
+  {
+    "title": "\"with codebase\" for all codebases!",
+    "date": "Jul 25, 2023",
+    "content": "0.4.0\nJul 25, 2023\nYou can now chat with any codebase. No need to have a Github repo / login through Github."
+  },
+  {
+    "title": "Jupyter CMD-k Context Building",
+    "date": "Jul 22, 2023",
+    "content": "0.3.1\nJul 22, 2023\nCmd-K can again see all of your cells in Jupyter!"
+  },
+  {
+    "title": "SSH and WSL fixes",
+    "date": "Jul 21, 2023",
+    "content": "0.3.0\nJul 21, 2023\nSSH and WSL should work again\nCan see recent folders on the new window screen\nEmpty message in chat with codebase context no longer loads forever"
+  },
+  {
+    "title": "Bug fix",
+    "date": "Jul 21, 2023",
+    "content": "0.2.52\nJul 21, 2023\nFixes a bug with CMD-k prompt history that would freeze the input box."
+  },
+  {
+    "title": "Inline GPT-4 and full-file edits",
+    "date": "Jul 20, 2023",
+    "content": "0.2.53-nightly\nJul 20, 2023\nLet us know what you think!"
+  },
+  {
+    "title": "Bug fixes",
+    "date": "Jul 19, 2023",
+    "content": "0.2.51\nJul 19, 2023\nFixes a bug that resulted in green-lines staying around after cancelling CMD-K."
+  },
+  {
+    "title": "Updates",
+    "date": "Jul 19, 2023",
+    "content": "0.2.52-nightly\nJul 19, 2023\nHotfixes etc."
+  },
+  {
+    "title": "Hotfixes",
+    "date": "Jul 19, 2023",
+    "content": "0.2.50\nJul 19, 2023\nCmd-L now properly focuses the chat again\nAdvanced context controls only show up if you have indexed your codebase"
+  },
+  {
+    "title": "Advanced context for codebase-wide chat",
+    "date": "Jul 19, 2023",
+    "content": "0.2.49\nJul 19, 2023\nThis build includes:\nMore control of context building abilities for codebase-wide chat\nA better flow for getting CMD-k to produce code with no linter errors (you should see a \"Try lint-fix\" button when relevant)\nSome UI/UX tweaks to CMD-K\nBug fixes"
+  },
+  {
+    "title": "hanging chat hotfix",
+    "date": "Jul 16, 2023",
+    "content": "0.2.51-nightly\nJul 16, 2023\nThis update fixes the bug where we hang on chat for up to 20s when not in a git repo"
+  },
+  {
+    "title": "infinite chat loop hotfix",
+    "date": "Jul 15, 2023",
+    "content": "0.2.48\nJul 15, 2023\nThis update fixes the infinite loop bug in the chat pane."
+  },
+  {
+    "title": "Patches",
+    "date": "Jul 15, 2023",
+    "content": "0.2.49-nightly\nJul 15, 2023\nFixed agent editing ability\nFixed issue with in-editor chat\nFixed issues with Cmd + K"
+  },
+  {
+    "title": "Patch for WSL/SSH (Search and Extensions)",
+    "date": "Jul 12, 2023",
+    "content": "0.2.47\nJul 12, 2023\nThis update patches search (Cmd/Win+Shift+F) and many extensions for and WSL and SSH users."
+  },
+  {
+    "title": "Small things!",
+    "date": "Jul 12, 2023",
+    "content": "0.2.48-nightly\nJul 12, 2023\nSemantic search in Cmd-Shift-F\nSome Cmd-K fixes\nPop-out chat! You can now view the chat in an editor, which is great if you're on a small screen."
+  },
+  {
+    "title": "Patch for Cmd-k Generates",
+    "date": "Jul 11, 2023",
+    "content": "0.2.46\nJul 11, 2023\nThis update improves the prompt for Cmd-k when you don't have any code selected."
+  },
+  {
+    "title": "ARM Windows Cmd-Shift-F",
+    "date": "Jul 10, 2023",
+    "content": "0.2.45\nJul 10, 2023\nThis update contains an optimistic patch to Ctrl+Shift+F for ARM Windows computers."
+  },
+  {
+    "title": "Experimental: interface agent!",
+    "date": "Jul 10, 2023",
+    "content": "0.2.46-nightly\nJul 10, 2023\nThis nightly build comes with experimental interface agent support!\nThe goal: you write an interface specification, and an agent writes both the tests and the implementation for you. It makes sure that the tests pass, so you don't even need to look at the implementation at all.\nWe think this may enable a new kind of programming, that's kind of different to what we're all used to. Please experiment with it and let us know your thoughts in the Discord channel.\nHow to use it:\nIt only works in Typescript with vitest or mocha as test runners right now.\nHit Cmd-Shift-I, and give your new interface a name.\nWrite the methods you want your interface to have.\nHit Cmd-Shift-Enter, and the AI will write the interface for you!"
+  },
+  {
+    "title": "Improvements to many features, Fixes to Python",
+    "date": "Jul 7, 2023",
+    "content": "0.2.44\nJul 7, 2023\nImproved the \"@Add new doc\" experience\nPython/Pylance support has been restored\nBetter @ symbol keyboard ergonomics\nMakes it clearer which docs are being looked at by the AI\nAI will respond with citations when you refernce docs\nFixes Cmd-K for Jupyter\nChat/Edit tooltip blocks less code\nImproves Cursor's appearance when custom themes are on\nImporting VS Code extensions now takes into account enabled/disabled\nCmd-k should work better for long diffs (greater than 100 lines of code)"
+  },
+  {
+    "title": "Agents, new docs",
+    "date": "Jul 6, 2023",
+    "content": "0.2.44-nightly.3\nJul 6, 2023\nWelcome to the first nightly release! It comes with agents, which we aren't releasing to the general public yet because we aren't convinced that they are useful. If you like them, please let us know what you use them for!"
+  },
+  {
+    "title": "Fix for Cmd+K",
+    "date": "Jul 4, 2023",
+    "content": "0.2.43\nJul 4, 2023\nPatches a few edgecases with Cmd+K."
+  },
+  {
+    "title": "Fix for Cmd+Shift+F (Mac ARM)",
+    "date": "Jul 4, 2023",
+    "content": "0.2.42\nJul 4, 2023\nFixes the VS Code codebase wide search for Mac ARM users without Rosetta."
+  },
+  {
+    "title": "Hotfix for \"with codebase\"",
+    "date": "Jul 4, 2023",
+    "content": "0.2.41\nJul 4, 2023\nIncludes a fix for the chat \"with codebase\" feature."
+  },
+  {
+    "title": "Release for Linux",
+    "date": "Jul 4, 2023",
+    "content": "0.2.40\nJul 4, 2023\nThis build has no changes for Mac and Windows, but fixes a problem for Linux users who can now upgrade to the latest version."
+  },
+  {
+    "title": "New inline edits",
+    "date": "Jul 3, 2023",
+    "content": "0.2.39\nJul 3, 2023\nCmd+K's UI has been changed: it's in-editor, \"sticky,\" and @-symbol-compatible. We hope it helps you stay in flow and more quickly iterate on your prompts. (Also, you can now use up/down arrows for history in chat.)\nAlso, Cursor's AI will now use popular documentation to improve the answers to your questions. For example, if you ask it \"how do I grab all s3 buckets with boto3?\" it will search over the boto3 docs to find the answer. To add your own documentation or explicitly reference existing docs, type '@library_name' in chat.\nBug fixes:\nLong code selections no longer brick the editor\nAuto-fixing errors no longer brings up the problems view (in particular, this fixes an annoying bug if you have auto-fix on save turned on)"
+  },
+  {
+    "title": "More fixes",
+    "date": "Jun 27, 2023",
+    "content": "0.2.37\nJun 27, 2023\nBetter @ symbol keyboard ergonomics\nFixes a bug where Cmd+K turned off for some users.\nBetter support for extensions (specifically re-enables the welcomeView)"
+  },
+  {
+    "title": "Hotfixes",
+    "date": "Jun 27, 2023",
+    "content": "0.2.36\nJun 27, 2023\nChat works if you don't have a folder open again\nCmd-shift-E to fix an error in chat works again\ncursor:// deep linking works now, so you should be able to log in to extensions\nAutoscrolling works again\nA few cmd-Z bugs for inline diffs have been squashed\nYou can now use Run & debug in Cursor again (the toolbar is back)\nEarly support for slash commands\nIf you're not logged in, we show the popup to log in again\nCursor is now based on version 1.79.2 of VSCodium, which comes with security updates and minor features"
+  },
+  {
+    "title": "Hotfix for Chat",
+    "date": "Jun 24, 2023",
+    "content": "0.2.35\nJun 24, 2023\nChat was failing on some non-git folders. That is now fixed."
+  },
+  {
+    "title": "Chat v2",
+    "date": "Jun 24, 2023",
+    "content": "0.2.34\nJun 24, 2023\nThe chat has been revamped! You can now use @ symbols to show files/code/docs to the AI. The chat history is improved, it's easier to see what the AI can see, and codeblocks auto-format on paste."
+  },
+  {
+    "title": "Diffs in AI linter feedback",
+    "date": "Jun 17, 2023",
+    "content": "0.2.34-nightly.1\nJun 17, 2023\nThe AI linter now shows diffs!"
+  },
+  {
+    "title": "Azure Support",
+    "date": "Jun 16, 2023",
+    "content": "0.2.33\nJun 16, 2023\nWe've added support for using your Azure OpenAI credentials. Also, small improvements / fixes."
+  },
+  {
+    "title": "Small improvements",
+    "date": "Jun 14, 2023",
+    "content": "0.2.32\nJun 14, 2023\nSmall fix for a format-on-save bug that was introduced in the last release. Some small improvements to the AI linter and codebase-wide chat."
+  },
+  {
+    "title": "Hotfix for chat focus",
+    "date": "Jun 11, 2023",
+    "content": "0.2.31\nJun 11, 2023\nChat should not steal your focus away! This is now fixed."
+  },
+  {
+    "title": "Show the AI documentation",
+    "date": "Jun 9, 2023",
+    "content": "0.2.30\nJun 9, 2023\nYou can now have the AI read documentation on your behalf! This will improve it's ability to answer questions about your favorite libraries. To use this feature, simply press the \"Docs\" button in the top right of the chat pane."
+  },
+  {
+    "title": "& 0.2.29 - Codebase Context fixes",
+    "date": "Jun 6, 2023",
+    "content": "0.2.28\nJun 6, 2023\nHotfixes to v1 of Codebase Context"
+  },
+  {
+    "title": "Codebase Context v2",
+    "date": "Jun 6, 2023",
+    "content": "0.2.27\nJun 6, 2023\nWe've improved codebase context!\nIn order to take full advantage, navigate to Settings (top right button), then \"Sync the current codebase\"\nLogin via github, then add the repo you wish to sync!\nFollowing this, you'll be able to see an improved version of codebase context in the search pane, and in chat (by pressing cmd+enter)."
+  },
+  {
+    "title": "Codebase Context v1",
+    "date": "Jun 6, 2023",
+    "content": "0.2.26\nJun 6, 2023\nIntroducing v1 of codebase-wide context! We'll be shipping major improvements to this in the next few days, but we'd love to hear your feedback.\nGo to the \"Search\" pane in order to see the new context.\nOr, on chat, press Cmd+Enter in order to get a response that uses context from the full codebase."
+  },
+  {
+    "title": "v0.2.25 - Hot-fix for extensions (2023-06-03)",
+    "date": "Jun 3, 2023",
+    "content": "Jun 3, 2023\nAlso potentially fixes the Jupyter problem that many people are experiencing."
+  },
+  {
+    "title": "v0.2.24 - Minor fixes (2023-06-02)",
+    "date": "Jun 2, 2023",
+    "content": "Jun 2, 2023\nSmall fixes for the toolformer and the AI linter."
+  },
+  {
+    "title": "v0.2.23 - AI Linting (2023-06-01)",
+    "date": "Jun 1, 2023",
+    "content": "Jun 1, 2023\nCheck out the \"more\" tab to have GPT-3.5 or GPT-4 review your code periodically for any problems."
+  },
+  {
+    "title": "v0.2.18 - Upgrades to GPT-4 and Please give us feedback!! (2023-05-20)",
+    "date": "May 20, 2023",
+    "content": "May 20, 2023\nAll users get 10 free gpt-4 requests !!!\nSwitching between models is a lot more easy, and the transition to gpt-4 is a lot smoother\nWe've added a new feedback button at the top right of the app. - We really do listen to your feedback, and your bug reports! We've fixed a lot of bugs in the last few weeks, and we're excited to keep improving the product. - We made this modal to make it easier to report feedback. Please keep the feedback coming!"
+  },
+  {
+    "title": "v0.2.17 - Fixes! (2023-05-018)",
+    "date": "May 18, 2023",
+    "content": "May 18, 2023\nFixes the \"infinite loading\" bug\nReintroduces the \"New AI Project\""
+  },
+  {
+    "title": "v0.2.16 - Terminal Debugger, and our biggest bug bash yet (v0.2.12)",
+    "date": "May 17, 2023",
+    "content": "May 17, 2023\nPress Cmd+D to auto-debug a terminal error\nPress Cmd+Shift+L, and the model will add the terminal context to chat\nYou can Pin custom extensions to your activity bar in the top left Here I've pinned File Explorer, Search, Source Control, and Extensions\nYou can Pin custom extensions to your activity bar in the top left\nContext ingestion across a full notebook\nSmall bug fixes\nPartial diff accent/reject Pressing Cmd+Y/Cmd+N lets you accept/reject subdiffs!\nPartial diff accent/reject\nGenerates work when you click elsewhere!\nGenerates work when you click elsewhere!\nFixed diff bug where it edits outside selected region\nFixed diff bug where it edits outside selected region\nPress ESC to exit the chat\nFixed the bug that shrinks code blocks in the chat!\nRemote SSH is easier to use!\nA better Cursor Tutor onboarding!\nBetter prompting for Toolformer"
+  },
+  {
+    "title": "v0.2.11 - Enhanced Chat Experience (2023-05-09)",
+    "date": "May 9, 2023",
+    "content": "May 9, 2023\nFixes the \"More\" tab\nIncludes some updates to \"Option+Enter\" in the chat"
+  },
+  {
+    "title": "v0.2.10 - Crucial Bug Fixes (2023-05-06)",
+    "date": "May 6, 2023",
+    "content": "May 6, 2023\nHotfix for 2 long-standing bugs: Broken chat that persists for a workspace Rarely, pressing Enter in the editor does nothing\nBroken chat that persists for a workspace\nRarely, pressing Enter in the editor does nothing"
+  },
+  {
+    "title": "v0.2.9 - Enhanced Features & Improvements (2023-05-04)",
+    "date": "May 4, 2023",
+    "content": "May 4, 2023\nOne-Click Extension Import from VS Code (beta). As a highly requested feature, we're excited to present the beta version of one-click extension imports!\nAlpha feature: 🧠 Alpha feature: Ask questions about your entire repo 🛠️. We are experimenting with ⌥+enter in the chat! The feature allows the model to think deeply about your response, search through files, and deliver a well-crafted answer. While it's in alpha, we're working hard to enhance this feature in the coming weeks. We'd love to hear your feedback!\nImproved prompting for edits and generates\nFixed login bugs\nAdded the ability to hide the tooltip (Cursor config > Advanced > Chat/Edit Tooltip)\nExtended prompt length for project generation\nGPT-4 support now available for project generation"
+  },
+  {
+    "title": "v0.2.8 - Multi-File Diffs & Remote SSH (2023-04-29)",
+    "date": "Apr 29, 2023",
+    "content": "Apr 29, 2023\nExperimental support for multi-file diffs\n🌐 Working remote ssh support through the \"OpenRemote - SSH\" extension"
+  },
+  {
+    "title": "v0.2.6 - GPT-4 & Project Generation (2023-04-19)",
+    "date": "Apr 19, 2023",
+    "content": "Apr 19, 2023\nGPT-4 now available for Pro users 150k GPT-4 tokens included Switch models in settings gear Better quality for all AI features\n150k GPT-4 tokens included\nSwitch models in settings gear\nBetter quality for all AI features\nNew experimental feature: Generate entire projects from a single prompt"
+  },
+  {
+    "title": "v0.2.5 - Scroll Bar Hotfix (2023-04-17)",
+    "date": "Apr 17, 2023",
+    "content": "Apr 17, 2023\nHotfix for scroll bars"
+  },
+  {
+    "title": "v0.2.4 - Chat Scrolling & Ghost Mode (2023-04-16)",
+    "date": "Apr 16, 2023",
+    "content": "Apr 16, 2023\nFixes to scrolling in chat\nGhost mode for opting out of storing any kind of data on our servers\nNicer edits, now work with cmd-Z\nVarious bugs squashed in the streaming diffs"
+  },
+  {
+    "title": "v0.2.3 - Enhanced Error Handling (2023-04-14)",
+    "date": "Apr 14, 2023",
+    "content": "Apr 14, 2023\nHover over an error to have the AI explain it/fix it\nSettings icon on Linux\nDon't install \"cursor\" command on startup\nGPT-4 support"
+  },
+  {
+    "title": "v0.2.2 - Bug Fixes Galore (2023-04-07)",
+    "date": "Apr 7, 2023",
+    "content": "Apr 7, 2023\nFixes the Mac autoupdating experience\n\"Undefined uri\" issue fixed\nTurns off the auto-install of the \"cursor .\" command (and fixes its install altogether)"
+  },
+  {
+    "title": "v0.2.1 - More Bug Fixes (2023-04-06)",
+    "date": "Apr 6, 2023",
+    "content": "Apr 6, 2023\nJust includes bug fixes"
+  },
+  {
+    "title": "v0.2.0 - Introducing Cursor 0.2.0! (2023-04-06)",
+    "date": "Apr 6, 2023",
+    "content": "Apr 6, 2023\nWe've transitioned to building Cursor on top of a fork of VSCodium, moving away from our previous Codemirror-based approach.\nThis allows us to focus on AI features while leveraging VSCode's mature text editing capabilities.\nOur goal is to create an IDE optimized for pair-programming with AI.\nWhile currently similar to a standard code editor with AI features, we plan to evolve the programming experience significantly over time.\nTransitioned to building Cursor on top of a fork of VSCodium\nFocus on enhancing the AI for pair-programming"
+  },
+  {
+    "title": "v0.1.12 (2023-03-30)",
+    "date": "Mar 30, 2023",
+    "content": "Mar 30, 2023\nAI now requires login\nUse an OpenAI API key for unlimited requests at cost (GPT-4 access if available)\nCleaned up chat styling\nOther small changes"
+  },
+  {
+    "title": "v0.1.11 (2023-03-28)",
+    "date": "Mar 28, 2023",
+    "content": "Mar 28, 2023\nTiny bug fix for terminal"
+  },
+  {
+    "title": "v0.1.10 (2023-03-28)",
+    "date": "Mar 28, 2023",
+    "content": "Mar 28, 2023\nTiny fix for some keyboard shortcut problems\nOther bits of polish"
+  },
+  {
+    "title": "v0.1.9 (2023-03-27)",
+    "date": "Mar 27, 2023",
+    "content": "Mar 27, 2023\nOpens the terminal in your current folder\nAdds an optional paid plan if you'd like to avoid the server capacity rate limits\nChanges autoupdate to notify you when there's a new version\nOther fixes"
+  },
+  {
+    "title": "v0.1.7 (2023-03-25)",
+    "date": "Mar 25, 2023",
+    "content": "Mar 25, 2023\nFuzzy search for file names\nFixes glitches with the terminal\nScrollbars work\nOther fixes (many from PRs 🙂)"
+  },
+  {
+    "title": "v0.1.6 (2023-03-24)",
+    "date": "Mar 24, 2023",
+    "content": "Mar 24, 2023\nFix to the hotkeys"
+  },
+  {
+    "title": "v0.1.5 (2023-03-23)",
+    "date": "Mar 23, 2023",
+    "content": "Mar 23, 2023\nAutomatically apply chat suggestion\nAsk AI to \"fix\" language errors\nChat history saved between sessions\nEasy to select and copy from chat\nResizable sidebar\nTerminal no longer interferes with chat\nFixes to all the language servers/copilot"
+  },
+  {
+    "title": "v0.1.2-0.1.3 (2023-03-18)",
+    "date": "Mar 18, 2023",
+    "content": "Mar 18, 2023\nBuilt-in terminal\nDiffs automatically continue\nMore diff fixes\nUp and down arrow in prompt bar have been mapped to less annoying keybindings\nCan open chat history from the prompt bar\nHave chat auto-insert suggested changes into editor"
+  },
+  {
+    "title": "v0.0.37 (2023-03-14)",
+    "date": "Mar 14, 2023",
+    "content": "Mar 14, 2023\nWindows and Linux support 🥳\nEdits can be as long as you'd like\nDiffs shouldn't disappear anymore\nEditing works for same file on multiple tabs\nInstant fix all lint errors with AI 😎"
+  }
+]
