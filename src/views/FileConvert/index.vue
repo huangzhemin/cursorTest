@@ -1,120 +1,107 @@
 <template>
-  <div class="file-convert">
-    <Header />
-    <div class="content">
-      <h2>文件转换</h2>
-      <el-upload
-        class="upload-demo"
-        drag
-        action="/api/convert"
-        :headers="headers"
-        :data="uploadData"
-        :on-success="handleSuccess"
-        :on-error="handleError"
-        :before-upload="beforeUpload"
-      >
-        <el-icon class="el-icon--upload"><upload-filled /></el-icon>
-        <div class="el-upload__text">
-          拖拽文件到此处或 <em>点击上传</em>
-        </div>
-        <template #tip>
-          <div class="el-upload__tip">
-            支持的格式：doc, docx, xls, xlsx, ppt, pptx
-          </div>
-        </template>
-      </el-upload>
+  <div class="tool-page">
+    <div class="tool-container">
+      <h1>文件转换</h1>
+      <p class="description">支持多种格式文件转换，快速高效</p>
 
-      <div class="format-select" v-if="showFormatSelect">
-        <el-select v-model="targetFormat" placeholder="选择目标格式">
-          <el-option label="PDF" value="pdf" />
-          <el-option label="DOCX" value="docx" />
-          <el-option label="XLSX" value="xlsx" />
-        </el-select>
-      </div>
+      <el-card class="upload-area">
+        <el-upload
+          class="upload-drop"
+          drag
+          action="#"
+          :auto-upload="false"
+          :on-change="handleFileChange"
+          :multiple="false">
+          <i class="el-icon-upload"></i>
+          <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+          <div class="el-upload__tip" slot="tip">支持的文件格式：PDF, DOC, DOCX, XLS, XLSX</div>
+        </el-upload>
+
+        <div class="convert-options" v-if="selectedFile">
+          <el-form label-position="top">
+            <el-form-item label="目标格式">
+              <el-select v-model="targetFormat" placeholder="请选择目标格式">
+                <el-option label="PDF" value="pdf"></el-option>
+                <el-option label="DOC" value="doc"></el-option>
+                <el-option label="DOCX" value="docx"></el-option>
+                <el-option label="XLS" value="xls"></el-option>
+                <el-option label="XLSX" value="xlsx"></el-option>
+              </el-select>
+            </el-form-item>
+          </el-form>
+
+          <el-button type="primary" @click="handleConvert">开始转换</el-button>
+        </div>
+      </el-card>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
-import Header from '../../components/Header.vue'
-import Footer from '../../components/Footer.vue'
-import { UploadFilled } from '@element-plus/icons-vue'
-import { ElMessage } from 'element-plus'
-
 export default {
   name: 'FileConvert',
-  components: {
-    Header,
-    Footer,
-    UploadFilled
-  },
   data() {
     return {
-      showFormatSelect: false,
-      targetFormat: 'pdf',
-      headers: {},
-      uploadData: {
-        format: 'pdf'
-      }
+      selectedFile: null,
+      targetFormat: ''
     }
   },
   methods: {
-    beforeUpload(file) {
-      const ext = file.name.split('.').pop().toLowerCase()
-      const supportedFormats = ['doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx']
-      
-      if (!supportedFormats.includes(ext)) {
-        ElMessage.error('不支持的文件格式')
-        return false
-      }
-      
-      this.showFormatSelect = true
-      this.uploadData.format = this.targetFormat
-      return true
+    handleFileChange(file) {
+      this.selectedFile = file
     },
-    handleSuccess(response, file) {
-      ElMessage.success('文件转换成功')
-    },
-    handleError(err) {
-      ElMessage.error('文件转换失败')
-    }
-  },
-  watch: {
-    targetFormat(val) {
-      this.uploadData.format = val
+    handleConvert() {
+      // 实现文件转换逻辑
+      console.log('Converting file:', this.selectedFile)
+      console.log('Target format:', this.targetFormat)
+      
+      this.$message({
+        message: '文件转换功能即将上线',
+        type: 'info'
+      })
     }
   }
 }
 </script>
 
 <style scoped>
-.file-convert {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.tool-page {
+  padding: 40px 20px;
 }
 
-.content {
-  flex: 1;
-  padding: 100px 20px 20px;
+.tool-container {
   max-width: 800px;
   margin: 0 auto;
-  width: 100%;
 }
 
-h2 {
+h1 {
+  font-size: 2em;
+  color: #2c3e50;
+  margin-bottom: 10px;
   text-align: center;
-  margin-bottom: 40px;
-  color: #303133;
 }
 
-.format-select {
+.description {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.upload-area {
+  padding: 30px;
+}
+
+.upload-drop {
+  text-align: center;
+}
+
+.convert-options {
   margin-top: 20px;
   text-align: center;
 }
 
-.el-upload__tip {
-  color: #909399;
+.el-form {
+  max-width: 300px;
+  margin: 0 auto 20px;
 }
 </style> 
